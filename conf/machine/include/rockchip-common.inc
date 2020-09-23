@@ -158,7 +158,15 @@ gen_rkupdateimg() {
 	echo "bootloader loader.bin" >> "${OUT}"
 	echo "parameter parameter" >> "${OUT}"
 	grep -o "([^)]*)" "${PARAMETER}" | tr -d "()" | while read NAME;do
-		echo -n "${NAME} " >> "${OUT}"
+		case "${NAME}" in
+			rootfs:grow)
+				echo -n "rootfs " >> "${OUT}"
+				;;
+			*)
+				echo -n "${NAME} " >> "${OUT}"
+				;;
+		esac
+
 		case "${NAME}" in
 			uboot-env)
 				echo "uboot.env" >> "${OUT}"
