@@ -1,1 +1,1 @@
-# meta-rockchip
+[The github of Rockchip Yocto layers](https://github.com/rockchip/meta-rockchip) is down. We clone the source from Rockchip internal server. Once Rockchip Github is recovered, we will transfer to the official github
